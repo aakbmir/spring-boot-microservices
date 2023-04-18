@@ -1,0 +1,35 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: API-Gateway
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: Patient-Management
+#          uri: lb://Patient-Management
+#          predicates:
+#            - name: "/patient/**"
+#        - id: Staff-Management
+#          uri: lb://Staff-Management
+#          predicates:
+#            - name: "/employee/**"
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
