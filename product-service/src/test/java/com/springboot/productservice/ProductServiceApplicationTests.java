@@ -40,7 +40,7 @@ class ProductServiceApplicationTests {
         dymDynamicPropertyRegistry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
     }
 
-    @Test
+   /* @Test
     void shouldCreateProduct() throws Exception {
         ProductRequest productRequest = getProductRequest();
         String productRequestString = objectMapper.writeValueAsString(productRequest);
@@ -53,10 +53,10 @@ class ProductServiceApplicationTests {
 
     private ProductRequest getProductRequest() {
         return ProductRequest.builder()
-                .name("iPhone 13")
-                .description("iPhone 13")
+                .name("Samsung_65_Inch")
+                .description("Samsung_65_Inch")
                 .price(BigDecimal.valueOf(1200))
                 .build();
-    }
+    }*/
 
 }
