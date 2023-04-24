@@ -21,12 +21,14 @@ import java.math.BigDecimal;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/*
 @SpringBootTest
 @Testcontainers
 @AutoConfigureMockMvc
+*/
 class ProductServiceApplicationTests {
 
-    @Container
+/*    @Container
     static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:4.4.2");
     @Autowired
     private MockMvc mockMvc;
@@ -40,7 +42,7 @@ class ProductServiceApplicationTests {
         dymDynamicPropertyRegistry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
     }
 
-   /* @Test
+    @Test
     void shouldCreateProduct() throws Exception {
         ProductRequest productRequest = getProductRequest();
         String productRequestString = objectMapper.writeValueAsString(productRequest);
@@ -53,8 +55,8 @@ class ProductServiceApplicationTests {
 
     private ProductRequest getProductRequest() {
         return ProductRequest.builder()
-                .name("Samsung_65_Inch")
-                .description("Samsung_65_Inch")
+                .name("iPhone 13")
+                .description("iPhone 13")
                 .price(BigDecimal.valueOf(1200))
                 .build();
     }*/
