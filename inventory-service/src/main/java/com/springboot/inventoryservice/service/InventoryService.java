@@ -1,7 +1,6 @@
 package com.springboot.inventoryservice.service;
 
 import com.springboot.inventoryservice.dto.InventoryResponse;
-import com.springboot.inventoryservice.model.Inventory;
 import com.springboot.inventoryservice.repository.InventoryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -25,14 +24,11 @@ public class InventoryService {
 //        Thread.sleep(10000);
 //        log.info("Wait Ended");
         return inventoryRepository.findBySkuCodeIn(skuCode).stream()
-                .map(this::mapInventoryAndThrowErrorIfBadluck)
-                .toList();
-    }
-
-    private InventoryResponse mapInventoryAndThrowErrorIfBadluck(Inventory inventory) {
-        return InventoryResponse.builder()
-                .skuCode(inventory.getSkuCode())
-                .isInStock(inventory.getQuantity() > 0)
-                .build();
+                .map(inventory ->
+                        InventoryResponse.builder()
+                                .skuCode(inventory.getSkuCode())
+                                .isInStock(inventory.getQuantity() > 0)
+                                .build()
+                ).toList();
     }
 }
