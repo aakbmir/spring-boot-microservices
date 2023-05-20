@@ -1,2 +1,2 @@
-# spring-boot-microservices-new
+# spring-boot-microservices
 This repository contains the latest source code of the spring-boot-microservices tutorial
